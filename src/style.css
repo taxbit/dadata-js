@@ -24,13 +24,13 @@ main {
     width: 20px;
     height: 100%;
     content: ' ';
-    background-image: url('./close.svg');
+    background-image: url('./images/close.svg');
     background-repeat: no-repeat;
     background-size: 10px 100%;
 }
 
 .dadata__input-button_loading::after {
-    background-image: url('./loader.svg');
+    background-image: url('./images/loader.svg');
     background-size: 20px 100%;
     width: 25px;
 }

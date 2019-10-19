@@ -4,12 +4,51 @@
   "description": "Dadata on vanila js",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "clean": "rimraf dist",
+    "build": "npm run clean && webpack --mode production",
+    "deploy": "npm run build && gh-pages -d dist"
   },
   "keywords": [
     "dadata",
     "js"
   ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/taxbit/dadata-js.git"
+  },
+  "bugs": {
+    "url": "https://taxbit.github.com/dadata-js"
+  },
+  "homepage": "https://github.com/taxbit/dadata-js#readme",
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/cli": "^7.5.5",
+    "@babel/core": "^7.5.5",
+    "@babel/preset-env": "^7.5.5",
+    "autoprefixer": "^9.6.1",
+    "babel-loader": "^8.0.6",
+    "copy-webpack-plugin": "^5.0.4",
+    "css-loader": "^3.2.0",
+    "cssnano": "^4.1.10",
+    "cssnano-preset-advanced": "^4.0.7",
+    "file-loader": "^4.2.0",
+    "gh-pages": "~2.0.1",
+    "html-webpack-plugin": "^3.2.0",
+    "path": "^0.12.7",
+    "postcss-loader": "^3.0.0",
+    "postcss-preset-env": "^6.7.0",
+    "webpack": "^4.39.2",
+    "webpack-cli": "^3.3.6",
+    "mini-css-extract-plugin": "^0.8.0",
+    "image-webpack-loader": "^5.0.0"
+  },
+  "dependencies": {
+    "babel-polyfill": "^6.26.0",
+    "core-js": "^3.1.4"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions"
+  ]
 }

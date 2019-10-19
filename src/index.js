@@ -1,3 +1,5 @@
+import "./style.css";
+
 class DadataSuggest {
     constructor(el, token) {
         this.token = token || '03689b817a66cdc9e0e0bed70f6121150b07e51e';
@@ -50,11 +52,8 @@ class DadataSuggest {
     }
     
     search(query) {
-        console.log(query);
-        
         this.client({ query: query, count: 5})
             .then(res=>{
-                console.log(res);
                 this.renderSuggestionsList(res.suggestions);
             });
     }
@@ -75,6 +74,7 @@ class DadataSuggest {
     
             this.suggestListContainer.append(suggestList);
             this.input.parentNode.insertBefore(this.suggestListContainer, this.inputClearButton.nextSibling);
+            this.showSuggestionsList ();
         }
 
         this.inputClearButton.classList.remove('dadata__input-button_loading');
@@ -85,7 +85,7 @@ class DadataSuggest {
     }
 
     showSuggestionsList () {
-        this.suggestListContainer.style.display = 'inline-block';
+        if (this.suggestListContainer.hasChildNodes()) this.suggestListContainer.style.display = 'inline-block';
     }
     
     clearSuggestList () {
